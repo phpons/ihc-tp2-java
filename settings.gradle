@@ -10,3 +10,4 @@ rootProject.name = "Exercicio1_parte1_Java"
 include ':exercicio1_parte1_java'
 include ':exercicio2_parte1_java'
 include ':exercicio3_parte1_java'
+include ':exercicios_parte2_java'

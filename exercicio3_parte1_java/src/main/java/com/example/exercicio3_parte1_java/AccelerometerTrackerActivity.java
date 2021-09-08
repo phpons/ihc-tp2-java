@@ -46,16 +46,16 @@ public class AccelerometerTrackerActivity extends AppCompatActivity implements S
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if(event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            float sensorX = event.values[0];
-            float sensorY = event.values[1];
-            float sensorZ = event.values[2];
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            float x = event.values[0];
+            float y = event.values[1];
+            float z = event.values[2];
 
-            edtXAxis.setText(String.valueOf(sensorX));
-            edtYAxis.setText(String.valueOf(sensorY));
-            edtZAxis.setText(String.valueOf(sensorZ));
+            edtXAxis.setText(String.valueOf(x));
+            edtYAxis.setText(String.valueOf(y));
+            edtZAxis.setText(String.valueOf(z));
 
-            if (sensorY < -5) {
+            if (Math.sqrt(x*x+y*y+z*z) > 17) {
                 startActivity(new Intent(AccelerometerTrackerActivity.this, PositionActivity.class));
             }
         }
